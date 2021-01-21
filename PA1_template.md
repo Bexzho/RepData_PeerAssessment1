@@ -1,11 +1,5 @@
----
-title: "Reproducible Research"
-author: "Alexander Ríos García"
-date: "18/1/2021"
-output: 
-        html_document:
-                toc: true
----
+
+# Reproducible Research
 
 # Load the data
 
@@ -30,7 +24,7 @@ totalstepsperday <- aggregate(steps~date, data0, sum, na.rm = TRUE)
 with(totalstepsperday, hist(x = steps, col = "green", ylim = c(0,30), main = "Histogram of the total number of steps taken each day.", xlab = "Number of steps", ylab = "Number of days"))
 ```
 
-![plot of chunk unnamed-chunk-49](figure/unnamed-chunk-49-1.png)
+![plot of chunk unnamed-chunk-49](figure/unnamed-chunk-49.png)
 
 ## Third: a) Mean of the total number of steps taken per day.
 
@@ -73,7 +67,7 @@ StepsPerInterval <- summarise(group_by(na.omit(data0),interval), StepsAverage = 
 with(StepsPerInterval, plot(interval,StepsAverage, type = "l", col = "blue", main = "Average Daily Activity Pattern", xlab = "Minutes of the day", ylab = "Average steps across all days"))
 ```
 
-![plot of chunk unnamed-chunk-52](figure/unnamed-chunk-52-1.png)
+![plot of chunk unnamed-chunk-52](figure/unnamed-chunk-52.png)
 
 ## Second:5-minute interval, on average across all the days in the dataset, contains the maximun number of steps?
 
@@ -138,7 +132,7 @@ totalStepsPerDayNoNA <- aggregate(steps ~ date, data = data0NoNA, sum)
 with(totalStepsPerDayNoNA, hist(x = steps, col = "red", ylim = c(0,40), main = "Histogram of the total number of steps taken each day.", xlab = "Number of steps", ylab = "Number of days"))
 ```
 
-![plot of chunk unnamed-chunk-57](figure/unnamed-chunk-57-1.png)
+![plot of chunk unnamed-chunk-57](figure/unnamed-chunk-57.png)
 
 ## Mean of the total number of steps taken per day with no NA´s.
 
@@ -203,7 +197,7 @@ ggplot(data = dataAcrossWdWe, aes(x = interval, y = steps, color = typeDay))+
         ylab("Average number of steps")
 ```
 
-![plot of chunk unnamed-chunk-62](figure/unnamed-chunk-62-1.png)
+![plot of chunk unnamed-chunk-62](figure/unnamed-chunk-62.png)
 
 
 
